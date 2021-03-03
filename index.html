@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Biglietto treno</title>
     <style media="screen">
 
       .titolo {
@@ -22,22 +22,25 @@
       var kilometerNumber = parseInt(prompt("Buongiorno passeggero! Inserisci il numero di kilometri che dovrai percorrere..."))
       var age = parseInt(prompt("Bene! Adesso dimmi la tua età... è importante per le nostre scontistiche! Mi raccomando... non mentire."))
       var minusPrice = 0.21;
+      var city = prompt("Buongiorno passeggero! Inserisci la città");
       var totalPrice = kilometerNumber * minusPrice;
       var minusAgeSale = 18;
       var maxAgeSale = 65;
       var saleFor18 = ((totalPrice / 100) * 80);
       var saleFor65 = ((totalPrice / 100) * 60);
+      var totalPricefixed = totalPrice.toFixed(2);
+      var saleFor18fixed = saleFor18.toFixed(2);
+      var saleFor65fixed = saleFor65.toFixed(2);
 
       if (age >= minusAgeSale && age <= maxAgeSale) {
-        console.log("Mi dispiace, ma non rientri in nessuna delle nostre scontistiche! Il prezzo per la tua tratta è " + totalPrice + "!");
+        console.log("Mi dispiace, ma non rientri in nessuna delle nostre scontistiche! Il prezzo per la tua tratta è " + totalPricefixed + "euro!");
 
       } else if (age < minusAgeSale) {
-        console.log("Complimenti! Rientri nella casistica, sei un minorenne! Il prezzo per la tua tratta è " + saleFor18 + "!");
+        console.log("Complimenti! Rientri nella casistica, sei un minorenne! Il prezzo per la tua tratta è " + saleFor18fixed + "euro!");
 
       } else {
-        console.log("Complimenti! Rientri nella casistica, sei un over-65! Invecchiare non porta solo difetti, vedi? Il prezzo per la tua tratta è " + saleFor65 + "!");
+        console.log("Complimenti! Rientri nella casistica, sei un over-65! Invecchiare non porta solo difetti, vedi? Il prezzo per la tua tratta è " + saleFor65fixed + "euro!");
       }
-
 
     </script>
   </body>
